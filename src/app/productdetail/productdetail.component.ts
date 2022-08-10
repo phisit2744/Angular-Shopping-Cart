@@ -5,17 +5,18 @@ import { CartService } from '../cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  selector: 'app-productdetail',
+  templateUrl: './productdetail.component.html',
+  styleUrls: ['./productdetail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductdetailComponent implements OnInit {
 
   phone: Product | undefined;
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService,
-    private _snackBar: MatSnackBar
+    private CartService: CartService,
+    private _snackBar: MatSnackBar,
+
   ) { }
 
   ngOnInit(): void {
@@ -24,10 +25,8 @@ export class ProductDetailComponent implements OnInit {
 
     this.phone = products.find(product => product.id === phoneid)
   }
-
-  addToCart(p: Product) {
-    this.cartService.addToCart(p);
-    this._snackBar.open("Add " + p.name + " to cart", "OK");
+  addToCart(p: Product) {    
+    this.CartService.addToCart(p);
+    this._snackBar.open("Add "+ p.name + " to cart ", " ok")
   }
-
 }

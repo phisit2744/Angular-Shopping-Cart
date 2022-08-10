@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCommonModule} from '@angular/material/core';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {MatListModule} from '@angular/material/list';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { CartComponent } from './cart/cart.component';
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatBadgeModule } from '@angular/material/badge';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductDetailComponent,
+    ProductdetailComponent,
     CartComponent
   ],
   imports: [
@@ -32,6 +32,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCommonModule,
     MatListModule,
     MatSnackBarModule,
     MatBadgeModule

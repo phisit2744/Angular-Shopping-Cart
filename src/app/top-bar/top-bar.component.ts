@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { CartService } from '../cart.service';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
@@ -10,19 +9,17 @@ import { CartService } from '../cart.service';
 })
 export class TopBarComponent implements OnInit {
 
-  cartCount = 0;
-
-  notifierSubscription: Subscription = this.cartService.event.subscribe(notified => {
-    this.cartCount = this.cartService.getCartItemCount();
+  notifireSubscription: Subscription = this.cartservice.event.subscribe(notified => {
+    this.cartCount = this.cartservice.getCartItemCount();
   });
-
-  constructor(private cartService: CartService) { }
+  cartCount = 0;
+  constructor(private cartservice: CartService) { }
 
   ngOnInit(): void {
   }
 
-  ngOnDestroy() {
-    this.notifierSubscription.unsubscribe();
+  ngOnDestroy(){
+    this.notifireSubscription.unsubscribe();
   }
-
+  
 }
